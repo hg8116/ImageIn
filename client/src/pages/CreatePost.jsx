@@ -36,6 +36,8 @@ const CreatePost = () => {
     }
   }
 
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (form.prompt && form.photo) {
@@ -61,10 +63,6 @@ const CreatePost = () => {
     else{
       alert('Please enter a prompt and generate an image.')
     }
-  }
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
   }
 
   const handleSurpriseMe = () => {
@@ -95,8 +93,8 @@ const CreatePost = () => {
           <FormField
             labelName="Prompt"
             type="text"
-            name="promt"
-            placeholder="Cute dog making a person happy."
+            name="prompt"
+            placeholder="A cute dog wearing sunglasses, digital"
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
